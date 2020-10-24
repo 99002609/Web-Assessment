@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web-Form</title>
+    <script>
+         function displayFunction(){
+            var name = document.getElementById("name").value;
+            var date = document.getElementById("date").value;
+            var travel = document.getElementById("travel").value;
+            var element = document.getElementsByName("G");
+            for(i = 0; i < element.length; i++) { 
+                if(element[i].checked) 
+                    var g = element[i].id; 
+            } 
+            var Result = document.getElementById("result");
+            Result.innerText = `${name} of gender ${g} on ${date} is travelling by ${travel}`;
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <form>
+            <p>Enter the Name:<input type="text" id="name" ></p>
+            <p>Enter the Date:<input type="Date" id="date"></p>
+            <p>
+                Enter the Mode of Travel:
+                <select id="travel">
+                    <option>Bus</option>
+                    <option>Train</option>
+                    <option>Flight</option>
+                    <option>Cab</option>
+                    <option>Ship</option>
+                </select>
+            </p>
+            <p>
+                Gender: <input type="radio" name="G" id="male">Male <input type="radio" name="G" id="female">Female
+            </p>
+            <p>
+                <button Type="button" onclick="displayFunction()">Display</button>
+            </p>
+        </form>
+    </div>
+    <div id="result">
+        
+    </div>
+</body>
+</html>
